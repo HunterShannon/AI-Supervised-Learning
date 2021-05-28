@@ -406,3 +406,16 @@ example.train(data)
 newitem = ['Sunny', 'Hot', 'High', 'Normal']
 print(example.classify(newitem))
 example.displayTree()
+
+#Runs training algorithm and outputs a result
+data = pandas.read_excel(r'LabData.xlsx', sheet_name='Sheet')
+example = ID3()
+example.train(data)
+
+print(example.classify(['Sunny', 'Mild', 'Normal', 'No']))
+
+print(example.classify(['Overcast', 'Hot', 'Normal', 'Yes']))
+
+print(example.classify(['Rainy', 'Hot', 'High', 'Yes']))
+
+example.displayTree()
